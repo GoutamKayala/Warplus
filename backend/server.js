@@ -249,7 +249,7 @@ const runIntelAnalysis = async () => {
 };
 
 // Start Cycles
-cron.schedule('*/20 * * * *', fetchLiveNews); // Fetch news every 20 min to relieve quota
+cron.schedule('*/10 * * * *', fetchLiveNews); // Fetch news every 10 min
 // Intelligence analysis is now manual or very infrequent to preserve free tier quota
 // cron.schedule('0 * * * *', runIntelAnalysis); 
 
