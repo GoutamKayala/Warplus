@@ -114,7 +114,7 @@ const getRandomFallback = () => FALLBACK_IMAGES[Math.floor(Math.random() * FALLB
 const fetchLiveNews = async () => {
     try {
         console.log('Fetching live news from NewsData.io...');
-        const apiKey = 'pub_1f9ede10034f49f3af1f102666f0339f';
+        const apiKey = process.env.NEWSDATA_API_KEY || 'pub_1f9ede10034f49f3af1f102666f0339f';
         const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&q=war%20OR%20conflict%20OR%20airstrike%20OR%20bombardment%20OR%20shelling%20OR%20military%20OR%20frontline%20OR%20siege%20OR%20troop`;
 
         const response = await axios.get(url);
