@@ -146,7 +146,7 @@ const fetchLiveNews = async () => {
                             publishedAt: item.pubDate ? new Date(item.pubDate.replace(' ', 'T') + 'Z') : new Date()
                         }
                     },
-                    { upsert: true, new: true }
+                    { upsert: true, returnDocument: 'after' }
                 );
                 newItemsCount++;
             } catch (err) {
